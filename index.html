@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GreenLab</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -169,7 +169,7 @@
   .history { max-width: 720px; }
   .history-year { margin-bottom: 3rem; }
   .history-year-label {
-    font-family: var(--mono); font-size: 0.85rem; color: var(--green-logo);
+    font-family: var(--mono); font-size: 0.85rem; font-weight: 500; color: var(--green-logo);
     letter-spacing: 0.12em; margin-bottom: 1.25rem;
     display: flex; align-items: center; gap: 1.25rem;
   }
@@ -180,7 +180,7 @@
   .history-note { font-size: 0.83rem; color: var(--ink-light); margin-top: 0.3rem; font-style: italic; }
 
   /* PEOPLE */
-  .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .people-card { padding: 2.5rem; background: var(--white); border: 1px solid var(--gray-mid); }
   .people-card-org { font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; color: var(--green-logo); text-transform: uppercase; margin-bottom: 1rem; }
   .people-card-name { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--green); margin-bottom: 1rem; line-height: 1.35; }
@@ -407,9 +407,14 @@
     <div class="about-panel" id="panel-people">
       <div class="people-grid">
         <div class="people-card">
+          <div class="people-card-org">타투유니온 · Tattoo Union</div>
+          <div class="people-card-name">타투이스트 스스로 만든 노동조합</div>
+          <div class="people-card-text">2020년 결성된 화섬식품노조 타투유니온은 타투이스트의 노동권과 안전을 위해 감염관리 지침·교육을 처음 시작한 당사자 조직입니다. 그린랩은 그 활동이 공간으로 확장된 결과입니다.</div>
+        </div>
+        <div class="people-card">
           <div class="people-card-org">녹색병원 · Green Hospital</div>
           <div class="people-card-name">노동자와 소외된 이들을 위한 공익병원</div>
-          <div class="people-card-text">1980~90년대 원진레이온 산재노동자들의 투쟁으로 세워진 공익병원입니다. "일하는 사람들이 건강한 삶을 누릴 수 있도록" — 그 헌장의 정신이 타투이스트와의 협력으로 이어졌습니다.</div>
+          <div class="people-card-text">1980~90년대 원진레이온 산재노동자들의 투쟁으로 세워진 공익병원입니다. "일하는 사람들이 건강한 삶을 누릴 수 있도록" — 그 헌장의 정신이 마찬가지로 소외된 노동자였던 타투이스트와의 협력으로 이어졌습니다.</div>
         </div>
         <div class="people-card">
           <div class="people-card-org">이사장 · GreenLab</div>
