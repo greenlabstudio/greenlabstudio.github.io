@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GreenLab</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=DM+Mono:wght@300;400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -48,7 +48,7 @@
     margin-bottom: 6px;
   }
   .nav-links { display: flex; gap: 3rem; list-style: none; }
-  .nav-links a { font-size: 0.92rem; font-weight: 400; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; letter-spacing: 0.01em; }
+  .nav-links a { font-size: 0.92rem; font-weight: 500; color: var(--ink); text-decoration: none; transition: color 0.2s; letter-spacing: 0.01em; }
   .nav-links a:hover { color: var(--green-logo); }
 
   /* HERO */
@@ -76,7 +76,7 @@
   .hero-bg-text {
     position: absolute; top: 50%; left: 5rem;
     transform: translateY(-55%);
-    font-family: var(--serif); font-size: clamp(7rem, 16vw, 14rem);
+    font-family: var(--sans); font-size: clamp(7rem, 16vw, 14rem);
     font-weight: 600; line-height: 0.9;
     color: rgba(255,255,255,0.035);
     letter-spacing: -0.04em;
@@ -90,13 +90,13 @@
     margin-bottom: 2rem;
   }
   .hero-title {
-    font-family: var(--serif); font-weight: 400;
+    font-family: var(--sans); font-weight: 700;
     font-size: clamp(2.8rem, 5.5vw, 5rem);
     line-height: 1.12; color: #fff;
     letter-spacing: -0.02em; margin-bottom: 2rem;
     max-width: 800px;
   }
-  .hero-title em { font-style: italic; color: var(--green-pale); }
+  .hero-title em { font-style: normal; color: var(--green-pale); }
   .hero-bottom {
     display: flex; align-items: flex-end; justify-content: space-between;
     gap: 4rem;
@@ -131,7 +131,7 @@
   .intro-item:last-child { border-right: none; padding-right: 0; padding-left: 3rem; }
   .intro-item:nth-child(2) { padding-left: 3rem; }
   .intro-num {
-    font-family: var(--serif); font-size: 3rem; font-weight: 400;
+    font-family: var(--sans); font-size: 2.75rem; font-weight: 700;
     color: var(--green-logo); line-height: 1; margin-bottom: 0.75rem;
   }
   .intro-label { font-size: 0.92rem; color: var(--ink-mid); font-weight: 400; line-height: 1.65; }
@@ -148,9 +148,9 @@
   .section-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--green-logo); }
 
   .section-title {
-    font-family: var(--serif); font-weight: 400;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.25; color: var(--green);
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    line-height: 1.3; color: var(--green);
     margin-bottom: 3rem; letter-spacing: -0.01em;
   }
 
@@ -187,8 +187,8 @@
   /* PEOPLE */
   .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .people-card { padding: 2.5rem; background: var(--white); border: 1px solid var(--gray-mid); }
-  .people-card-org { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; color: var(--green-logo); text-transform: uppercase; margin-bottom: 1rem; }
-  .people-card-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--green); margin-bottom: 1rem; line-height: 1.35; }
+  .people-card-org { font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; color: var(--green-logo); text-transform: uppercase; margin-bottom: 1rem; }
+  .people-card-name { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--green); margin-bottom: 1rem; line-height: 1.35; }
   .people-card-text { font-size: 0.95rem; line-height: 1.85; color: var(--ink-mid); font-weight: 400; }
 
   /* PROGRAMS */
@@ -202,11 +202,12 @@
   }
   .program-left {}
   .program-num { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--ink-light); margin-bottom: 1.5rem; }
-  .program-name { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--green); line-height: 1.35; margin-bottom: 1.5rem; }
-  .program-badge { display: inline-block; font-family: var(--mono); font-size: 0.88rem; letter-spacing: 0.1em; padding: 0.4rem 1rem; border: 1px solid var(--green-logo); color: var(--green-logo); text-transform: uppercase; }
+  .program-name { font-family: var(--sans); font-size: 1.7rem; font-weight: 600; color: var(--green); line-height: 1.35; margin-bottom: 1.5rem; }
+  .program-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.04em; padding: 0.4rem 1rem; border: 1px solid var(--green-logo); color: var(--green-logo); }
   .program-right {}
   .program-desc { font-size: 1rem; line-height: 1.9; color: var(--ink-mid); font-weight: 400; margin-bottom: 1.5rem; }
   .program-detail { margin-bottom: 2rem; }
+  .curriculum-source { font-size: 0.82rem; color: var(--ink-light); margin-bottom: 1.75rem; }
   .curriculum-major {
     border-top: 1px solid var(--gray-mid);
     padding: 1.5rem 0;
@@ -222,12 +223,12 @@
     color: var(--green-logo); font-size: 1.1rem;
   }
   details[open] > .curriculum-major-summary::after { content: '−'; }
-  .curriculum-major-num { font-family: var(--serif); font-size: 1.3rem; color: var(--green-logo); }
-  .curriculum-major-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--green); }
+  .curriculum-major-num { font-family: var(--sans); font-weight: 700; font-size: 1.2rem; color: var(--green-logo); }
+  .curriculum-major-title { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--green); }
   .curriculum-major-body { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 2rem; }
   .curriculum-mid-title {
-    font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.06em;
-    color: var(--ink); font-weight: 500; margin-bottom: 1.1rem;
+    font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.03em;
+    color: var(--ink); font-weight: 600; margin-bottom: 1.1rem;
   }
   .curriculum-sub { border-left: 2px solid var(--gray-mid); padding-left: 1.25rem; margin-bottom: 1.4rem; }
   .curriculum-sub:last-child { margin-bottom: 0; }
@@ -238,7 +239,7 @@
   }
   .curriculum-topics li { font-size: 0.85rem; color: var(--ink-mid); position: relative; padding-left: 0.85rem; }
   .curriculum-topics li::before { content: '·'; position: absolute; left: 0; color: var(--green-logo); }
-  .curriculum-instructor { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-light); letter-spacing: 0.03em; }
+  .curriculum-instructor { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-light); }
   .program-notice {
     margin-top: 2rem; padding: 1.5rem 2rem;
     background: var(--green-bg); border-left: 3px solid var(--green-logo);
@@ -260,17 +261,17 @@
     min-width: 130px; letter-spacing: 0.02em;
   }
   .schedule-body { flex: 1; }
-  .schedule-title { font-family: var(--serif); font-size: 1.15rem; color: var(--green); margin-bottom: 0.35rem; }
+  .schedule-title { font-family: var(--sans); font-size: 1.15rem; font-weight: 600; color: var(--green); margin-bottom: 0.35rem; }
   .schedule-meta { font-size: 0.85rem; color: var(--ink-light); }
   .schedule-badge {
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em;
-    padding: 0.35rem 0.85rem; text-transform: uppercase; white-space: nowrap;
+    font-family: var(--sans); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.02em;
+    padding: 0.35rem 0.85rem; white-space: nowrap;
   }
-  .schedule-badge.open { background: var(--green-bg); color: var(--green-logo); }
+  .schedule-badge.open { background: #FFE4DE; color: #E85D4E; font-weight: 600; }
   .schedule-badge.upcoming { background: var(--gray); color: var(--ink-mid); }
   .schedule-badge.closed { background: var(--gray); color: var(--ink-light); }
   .schedule-apply {
-    font-family: var(--mono); font-size: 0.8rem; color: var(--green-logo);
+    font-family: var(--sans); font-weight: 500; font-size: 0.85rem; color: var(--green-logo);
     text-decoration: none; white-space: nowrap; border-bottom: 1px solid var(--green-logo);
     padding-bottom: 0.1rem;
   }
@@ -281,7 +282,7 @@
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; margin-top: 1rem; }
   .contact-grid.single { grid-template-columns: 1fr; max-width: 520px; }
   .contact-row { padding: 1.35rem 0; border-bottom: 1px solid var(--gray-mid); display: flex; gap: 2rem; }
-  .contact-row-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-light); text-transform: uppercase; min-width: 75px; padding-top: 0.1rem; }
+  .contact-row-label { font-family: var(--sans); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink-light); min-width: 75px; padding-top: 0.1rem; }
   .contact-row-val { font-size: 0.98rem; color: var(--ink-mid); font-weight: 400; line-height: 1.65; }
   .contact-row-val a { color: var(--green-logo); text-decoration: none; }
   .contact-note { margin-top: 2rem; padding: 1.5rem; background: var(--white); border-left: 3px solid var(--green-logo); }
@@ -292,11 +293,10 @@
 
   /* FOOTER */
   footer {
-    background: var(--ink); padding: 3rem 5rem;
-    display: flex; align-items: center; justify-content: space-between;
+    background: var(--ink); padding: 2.5rem 5rem;
+    display: flex; align-items: center; justify-content: flex-end;
   }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
-  .footer-copy { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.22); }
+  .footer-logo-img { height: 38px; width: auto; opacity: 0.85; }
 
   /* ===== MOBILE ===== */
   @media (max-width: 768px) {
@@ -340,7 +340,7 @@
     .schedule-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
     .schedule-date { min-width: auto; }
 
-    footer { flex-direction: column; gap: 0.75rem; padding: 2rem 1.5rem; text-align: center; }
+    footer { justify-content: center; padding: 2rem 1.5rem; }
   }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -464,11 +464,12 @@
   <div class="programs-grid">
     <div class="program-card">
       <div class="program-left">
-        <div class="program-name">타투이스트<br>감염관리 교육</div>
+        <div class="program-name">타투이스트<br>감염관리교육</div>
         <span class="program-badge">조합원 무료</span>
       </div>
       <div class="program-right">
         <p class="program-desc">타투유니온·녹색병원이 공동 개발하고 국가 연구기관이 인정한 감염관리 지침을 기반으로 하는 실무 교육입니다.</p>
+        <p class="curriculum-source">「문신사 자격시험 및 보수교육 체계 개발과 관리방안 마련 연구」(보건복지부 연구용역, 한국능률협회, 2024)를 기반으로 한 커리큘럼입니다.</p>
         <div class="program-detail">
           <details class="curriculum-major" open>
             <summary class="curriculum-major-summary">
@@ -555,8 +556,7 @@
 </section>
 
 <footer>
-  <div class="footer-logo">GreenLab</div>
-  <div class="footer-copy">© 2026 GreenLab. Seoul, Korea.</div>
+  <img src="images/logo_en.png" alt="GREEN LAB" class="footer-logo-img">
 </footer>
 
 <script>
@@ -568,7 +568,7 @@ function showTab(id, el) {
 }
 
 /* ===== 교육 일정 (구글 스프레드시트 연동) =====
-   1. 구글 스프레드시트에 날짜 / 과정명 / 시간 / 장소 / 상태 / 신청링크 열을 만든다.
+   1. 구글 스프레드시트에 날짜 / 과정명 / 시간 / 상태 / 신청링크 열을 만든다. (장소는 항상 그린랩이라 표시하지 않음)
    2. 파일 > 공유 > 웹에 게시 > CSV 형식으로 게시하고, 그 링크를 아래 SHEET_CSV_URL에 붙여넣는다.
    3. 상태 칸에는 "모집중" / "모집예정" / "마감" 중 하나를 적으면 배지 색이 자동으로 바뀐다.
 */
@@ -597,7 +597,7 @@ async function loadSchedule() {
       let badgeClass = 'upcoming';
       if (status.includes('모집중')) badgeClass = 'open';
       else if (status.includes('마감')) badgeClass = 'closed';
-      const meta = [r['시간'], r['장소']].filter(v => v && v.trim()).join(' · ');
+      const meta = (r['시간'] || '').trim();
       const applyLink = (r['신청링크'] || '').trim()
         ? `<a class="schedule-apply" href="${r['신청링크']}" target="_blank" rel="noopener">신청하기 →</a>`
         : '';
