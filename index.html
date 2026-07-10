@@ -276,6 +276,8 @@
   .contact { padding: 8rem 5rem; background: var(--gray); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; margin-top: 1rem; }
   .contact-grid.single { grid-template-columns: 1fr; max-width: 520px; }
+  .contact-map { border: 1px solid var(--gray-mid); overflow: hidden; line-height: 0; }
+  .contact-map iframe { display: block; filter: grayscale(0.15); }
   .contact-row { padding: 1.35rem 0; border-bottom: 1px solid var(--gray-mid); display: flex; gap: 2rem; }
   .contact-row-label { font-family: var(--sans); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink-light); min-width: 75px; padding-top: 0.1rem; }
   .contact-row-val { font-size: 0.98rem; color: var(--ink-mid); font-weight: 400; line-height: 1.65; }
@@ -348,9 +350,9 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">소개</a></li>
-    <li><a href="#programs">교육 프로그램</a></li>
+    <li><a href="#programs">감염관리교육</a></li>
     <li><a href="#schedule">교육 일정</a></li>
-    <li><a href="#contact">문의</a></li>
+    <li><a href="#contact">오시는 길</a></li>
   </ul>
 </nav>
 
@@ -360,7 +362,7 @@
     <h1 class="hero-title">안전한 타투 문화를<br><em>만드는</em> 교육 공간</h1>
     <div class="hero-bottom">
       <p class="hero-sub">그린랩은 타투이스트를 위한 감염관리교육을 기본으로,<br>타투이스트가 숙련된 예술 노동자로 성장할 수 있도록<br>다양한 교육 프로그램을 운영하는 타투 전문 교육기관입니다.</p>
-      <a href="#programs" class="hero-cta">교육 프로그램 보기</a>
+      <a href="#programs" class="hero-cta">감염관리교육 보기</a>
     </div>
   </div>
 </section>
@@ -453,8 +455,8 @@
 
 <!-- PROGRAMS -->
 <section class="programs" id="programs">
-  <div class="section-eyebrow">Programs</div>
-  <h2 class="section-title">교육 프로그램</h2>
+  <div class="section-eyebrow">Program</div>
+  <h2 class="section-title">감염관리교육</h2>
   <div class="programs-grid">
     <div class="program-card">
       <div class="program-left">
@@ -527,12 +529,16 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-eyebrow">Contact</div>
-  <h2 class="section-title">문의하기</h2>
-  <div class="contact-grid single">
+  <h2 class="section-title">오시는 길</h2>
+  <div class="contact-grid">
     <div>
       <div class="contact-row">
         <span class="contact-row-label">주소</span>
         <span class="contact-row-val">서울특별시 중랑구 면목로 361 2층</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-label">지하철</span>
+        <span class="contact-row-val">7호선 면목역 도보 9분<br>7호선 사가정역 도보 6분</span>
       </div>
       <div class="contact-row">
         <span class="contact-row-label">이메일</span>
@@ -545,6 +551,13 @@
       <div class="contact-note">
         <p>화섬식품노조 타투유니온 조합원은 일부 교육과정을 <strong>무료</strong>로 수강하실 수 있습니다. 자세한 내용은 이메일로 문의해주세요.</p>
       </div>
+    </div>
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps?q=서울특별시+중랑구+면목로+361&output=embed"
+        width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
