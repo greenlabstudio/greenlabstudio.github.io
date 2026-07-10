@@ -581,7 +581,8 @@ async function loadSchedule() {
     return;
   }
   try {
-    const res = await fetch(SHEET_CSV_URL);
+    const cacheBustUrl = SHEET_CSV_URL + (SHEET_CSV_URL.includes('?') ? '&' : '?') + 'cachebust=' + Date.now();
+    const res = await fetch(cacheBustUrl, { cache: 'no-store' });
     if (!res.ok) throw new Error('fetch failed: ' + res.status);
     const text = await res.text();
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
