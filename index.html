@@ -568,7 +568,7 @@ function showTab(id, el) {
 }
 
 /* ===== 교육 일정 (구글 스프레드시트 연동) =====
-   1. 구글 스프레드시트에 날짜 / 과정명 / 시간 / 상태 / 신청링크 열을 만든다. (장소는 항상 그린랩이라 표시하지 않음)
+   1. 구글 스프레드시트에 날짜 / 과정명 / 강사 / 시간 / 상태 / 신청링크 열을 만든다. (장소는 항상 그린랩이라 표시하지 않음)
    2. 파일 > 공유 > 웹에 게시 > CSV 형식으로 게시하고, 그 링크를 아래 SHEET_CSV_URL에 붙여넣는다.
    3. 상태 칸에는 "모집중" / "모집예정" / "마감" 중 하나를 적으면 배지 색이 자동으로 바뀐다.
 */
@@ -597,7 +597,9 @@ async function loadSchedule() {
       let badgeClass = 'upcoming';
       if (status.includes('모집중')) badgeClass = 'open';
       else if (status.includes('마감')) badgeClass = 'closed';
-      const meta = (r['시간'] || '').trim();
+      const instructor = (r['강사'] || '').trim();
+      const time = (r['시간'] || '').trim();
+      const meta = [instructor ? `강사 ${instructor}` : '', time].filter(Boolean).join(' · ');
       const applyLink = (r['신청링크'] || '').trim()
         ? `<a class="schedule-apply" href="${r['신청링크']}" target="_blank" rel="noopener">신청하기 →</a>`
         : '';
