@@ -227,18 +227,37 @@
     padding: 1.5rem 0;
   }
   .curriculum-major-summary {
-    display: flex; align-items: baseline; gap: 0.85rem;
+    display: flex; align-items: baseline; gap: 0.85rem; cursor: pointer; list-style: none;
   }
-  .curriculum-major-num { font-family: var(--sans); font-weight: 700; font-size: var(--fs-md); color: var(--green-logo); }
+  .curriculum-major-summary::-webkit-details-marker { display: none; }
+  .curriculum-major-summary::after {
+    content: '펼치기 +'; margin-left: auto; font-family: var(--sans);
+    color: var(--green-logo); font-size: var(--fs-label); font-weight: 500;
+  }
+  details[open] > .curriculum-major-summary::after { content: '접기 −'; }
+  .curriculum-major-num { font-family: var(--sans); font-weight: 700; font-size: var(--fs-md); color: var(--green-logo); display: inline-block; min-width: 1.4rem; }
   .curriculum-major-title { font-family: var(--sans); font-size: var(--fs-md); font-weight: 700; color: var(--green); }
   .curriculum-major-body { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 2rem; }
   .curriculum-mid-title {
     font-family: var(--sans); font-size: var(--fs-body); letter-spacing: 0.02em;
     color: var(--ink); font-weight: 600; margin-bottom: 1.1rem;
   }
-  .curriculum-topics { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; margin-bottom: 0.6rem; }
-  .curriculum-topics li { font-size: var(--fs-body); color: var(--ink-mid); position: relative; padding-left: 0.9rem; }
-  .curriculum-topics li::before { content: '·'; position: absolute; left: 0; color: var(--green-logo); }
+  .curriculum-sub { margin-bottom: 1.5rem; padding-left: 1.25rem; border-left: 2px solid var(--gray-mid); }
+  .curriculum-sub:last-child { margin-bottom: 0; }
+  .curriculum-sub-title { font-size: var(--fs-body); font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+  .curriculum-topics { list-style: none; margin-bottom: 0.6rem; }
+  .curriculum-topics li { font-size: var(--fs-body); color: var(--ink-mid); line-height: 1.8; position: relative; padding-left: 1rem; }
+  .curriculum-topics li::before { content: '—'; position: absolute; left: 0; color: var(--green-logo); }
+  .curriculum-sublist { list-style: none; margin: 0.3rem 0 0.3rem 1rem; }
+  .curriculum-sublist li { font-size: var(--fs-note); color: var(--ink-light); line-height: 1.7; padding-left: 1rem; position: relative; }
+  .curriculum-sublist li::before { content: '·'; position: absolute; left: 0.15rem; color: var(--green-light); }
+
+  /* CREDITS (강사진/연구진) — 컴팩트 텍스트 */
+  .credit-inline { margin-bottom: 1.75rem; }
+  .credit-inline p { font-size: var(--fs-note); line-height: 1.9; color: var(--ink-light); margin-bottom: 0.4rem; }
+  .credit-inline p:last-child { margin-bottom: 0; }
+  .credit-inline-label { font-weight: 700; color: var(--ink-mid); margin-right: 0.5rem; }
+
   .program-notice {
     margin-top: 2rem; padding: 1.5rem 2rem;
     background: var(--green-bg); border-left: 3px solid var(--green-logo);
@@ -356,6 +375,7 @@
     <li><a href="#about">소개</a></li>
     <li><a href="#programs">감염관리교육</a></li>
     <li><a href="#schedule">교육 일정</a></li>
+    <li><a href="space.html">공간 대관</a></li>
     <li><a href="#contact">오시는 길</a></li>
   </ul>
 </nav>
@@ -444,7 +464,7 @@
       <div class="history">
         <div class="history-year">
           <div class="history-year-label">2020</div>
-          <div class="history-item"><span class="history-date">11</span><div><div class="history-text">타투이스트 감염관리 지침 초판 발행</div><div class="history-note">녹색병원·타투유니온 공동, 서울노동권익센터 지원</div></div></div>
+          <div class="history-item"><span class="history-date">11</span><div><div class="history-text">타투이스트 감염관리 지침 초판 발행</div><div class="history-note">녹색병원·타투유니온 공동, 서울노동권익센터 지원<br>개발진 · 임상혁(녹색병원장), 김규연(녹색병원), 최유선(녹색병원), 김유승(타투유니온 보건교육부장), 최민정(녹색병원 타투예술문화교육센터 기획부장)</div></div></div>
         </div>
         <div class="history-year">
           <div class="history-year-label">2021</div>
@@ -488,48 +508,146 @@
         <p class="program-desc">타투유니온·녹색병원이 공동 개발하고 국가 연구기관이 인정한 감염관리 지침을 기반으로 하는 실무 교육입니다.</p>
         <p class="curriculum-source">「문신사 자격시험 및 보수교육 체계 개발과 관리방안 마련 연구」(보건복지부 연구용역, 한국능률협회, 2024)를 기반으로 한 커리큘럼입니다.</p>
         <p class="program-note-light">※ 화섬식품노조 타투유니온 조합원(가입 3개월 이상)은 무료로 수강하실 수 있습니다.</p>
+        <div class="credit-inline">
+          <p><span class="credit-inline-label">강사진</span> 이명준(직업환경의학과 전문의), 최유선(감염관리과 전문의)</p>
+          <p><span class="credit-inline-label">교육 개발</span> 임상혁(녹색병원장), 최유선·조철영·이명준·김규연(녹색병원), 김신범(노동환경건강연구소), 김유승·최민정(타투유니온)</p>
+        </div>
         <div class="program-detail">
-          <div class="curriculum-major">
-            <div class="curriculum-major-summary">
+          <details class="curriculum-major">
+            <summary class="curriculum-major-summary">
               <span class="curriculum-major-num">I</span>
               <span class="curriculum-major-title">이론교육</span>
-            </div>
+            </summary>
             <div class="curriculum-major-body">
               <div>
                 <div class="curriculum-mid-title">A. 보건위생관리</div>
-                <ul class="curriculum-topics">
-                  <li>공중위생관리학</li>
-                  <li>피부학</li>
-                  <li>해부생리학</li>
-                  <li>시술 안전 및 위기관리</li>
-                  <li>염료학</li>
-                </ul>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">1. 공중위생관리학</div>
+                  <ul class="curriculum-topics">
+                    <li>공중보건학 개론
+                      <ul class="curriculum-sublist">
+                        <li>질병관리</li>
+                        <li>환경위생</li>
+                        <li>보건관리</li>
+                      </ul>
+                    </li>
+                    <li>소독과 멸균학</li>
+                    <li>공중위생관리법</li>
+                    <li>문신사 제도의 변화와 법적배경</li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">2. 피부학</div>
+                  <ul class="curriculum-topics">
+                    <li>피부 구조와 기능</li>
+                    <li>피부 유형과 특성</li>
+                    <li>피부 장애와 질환
+                      <ul class="curriculum-sublist">
+                        <li>피부감염(세균성 농가진 등)</li>
+                        <li>피부 알레르기 반응</li>
+                        <li>흉터와 켈로이드</li>
+                        <li>피부종양 기초 지식: 위험 병변(흑색종, MRSA 등)</li>
+                      </ul>
+                    </li>
+                    <li>시술 관련 피부 변화</li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">3. 해부생리학</div>
+                  <ul class="curriculum-topics">
+                    <li>인체 기본 구조와 기능</li>
+                    <li>피부의 주요 계통 이해
+                      <ul class="curriculum-sublist">
+                        <li>근육 계통</li>
+                        <li>내분비 계통</li>
+                        <li>신경 계통</li>
+                        <li>순환기 계통</li>
+                      </ul>
+                    </li>
+                    <li>면역 체계와 감염</li>
+                    <li>문신 관련 해부학적 고려사항
+                      <ul class="curriculum-sublist">
+                        <li>혈관과 순환, 신경계, 특수부위 고려</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">4. 시술 안전 및 위기관리</div>
+                  <ul class="curriculum-topics">
+                    <li>감염관리 및 예방, 손 위생 및 개인보호장비</li>
+                    <li>시술 안전 프로토콜(시술 전·중·후 관리)</li>
+                    <li>응급상황 대응(알레르기, 실신, 출혈, 감염)</li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">5. 염료학</div>
+                  <ul class="curriculum-topics">
+                    <li>체내에 잉크를 주입하여 장기적으로 발생될 수 있는 건강위험(발암성 및 전신독성) 예방 관리</li>
+                    <li>잉크가 진피층에 안착하는 과학적 원리와 자외선 노출 시 발생하는 변색 메커니즘</li>
+                  </ul>
+                </div>
               </div>
+
               <div>
                 <div class="curriculum-mid-title">B. 문신 안전시술 실무지식</div>
-                <ul class="curriculum-topics">
-                  <li>기구 및 환경, 폐기물 관리</li>
-                </ul>
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">1. 기구 및 환경 관리</div>
+                  <ul class="curriculum-topics">
+                    <li>기구 관리 및 소독과 멸균</li>
+                    <li>작업환경 환경관리</li>
+                    <li>폐기물 처리 및 관리</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="curriculum-major">
-            <div class="curriculum-major-summary">
+          <details class="curriculum-major">
+            <summary class="curriculum-major-summary">
               <span class="curriculum-major-num">II</span>
               <span class="curriculum-major-title">실기교육</span>
-            </div>
+            </summary>
             <div class="curriculum-major-body">
               <div>
                 <div class="curriculum-mid-title">C. 문신 안전시술 실무</div>
-                <ul class="curriculum-topics">
-                  <li>시술 준비</li>
-                  <li>시술 과정</li>
-                  <li>시술 후 관리</li>
-                </ul>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">1. 시술 준비 과정</div>
+                  <ul class="curriculum-topics">
+                    <li>고객 사전 상담 및 안전점검(건강상태, 과거력, 동의서 작성 등)</li>
+                    <li>작업환경 준비 및 소독</li>
+                    <li>도구 및 재료 멸균 준비</li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">2. 시술 과정 관리</div>
+                  <ul class="curriculum-topics">
+                    <li>위생적 시술 기법</li>
+                    <li>교차오염 방지 방법</li>
+                    <li>안전한 색소 및 도구 사용</li>
+                    <li>출혈 및 통증 관리</li>
+                  </ul>
+                </div>
+
+                <div class="curriculum-sub">
+                  <div class="curriculum-sub-title">3. 시술 후 관리</div>
+                  <ul class="curriculum-topics">
+                    <li>사용 도구 및 폐기물 처리</li>
+                    <li>작업환경 정리 및 소독</li>
+                    <li>고객 관리 및 주의사항 안내</li>
+                    <li>기록 관리 및 추적 시스템</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </details>
         </div>
       </div>
     </div>
