@@ -278,7 +278,7 @@
   .seminar-embed-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; }
   .sem-poster-frame {
     background: #fff; padding: 0.6rem; box-shadow: 0 18px 40px rgba(26,26,22,0.15);
-    transform: rotate(1deg); max-width: 360px; margin: 0 auto;
+    transform: rotate(1deg); max-width: 480px; width: 100%; margin: 0 auto;
   }
   .sem-poster-frame img { display: block; width: 100%; height: auto; }
   .region-route {
@@ -302,13 +302,12 @@
   .legend-dot.upcoming { background: var(--ink-light); }
   .legend-dot.closed { background: var(--gray-mid); }
   .schedule-region-tag {
-    font-family: var(--sans); font-weight: 500; font-size: var(--fs-label);
-    color: var(--green-logo); background: var(--green-bg); padding: 0.3rem 0.5rem;
+    font-family: var(--sans); font-weight: 600; font-size: var(--fs-label);
+    color: var(--green-logo); background: var(--white); border: 1px solid var(--green-logo);
+    padding: 0.3rem 0.5rem;
     white-space: nowrap; width: 98px; flex-shrink: 0; text-align: center;
   }
   .schedule-note-inline { font-size: var(--fs-micro); color: var(--ink-light); margin-top: 0.35rem; font-style: italic; }
-  .seminar-embed-cta { margin-top: 2rem; font-size: var(--fs-note); color: var(--ink-light); }
-  .seminar-embed-cta a { color: var(--green-logo); text-decoration: none; border-bottom: 1px solid var(--green-logo); }
 
   /* SCHEDULE */
   .schedule { padding: 8rem 5rem; background: var(--white); border-top: 1px solid var(--gray-mid); }
@@ -743,7 +742,6 @@
       <div id="tour-schedule-list" class="schedule-grid">
         <p class="schedule-status">일정을 불러오는 중입니다…</p>
       </div>
-      <p class="seminar-embed-cta">회차별 자세한 안내는 <a href="seminar.html">문신사법 세미나 페이지</a>에서도 보실 수 있습니다.</p>
     </div>
   </div>
 </section>
