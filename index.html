@@ -275,10 +275,10 @@
     overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
   }
   .seminar-embed { padding: 8rem 5rem; background: var(--gray); border-top: 1px solid var(--gray-mid); }
-  .seminar-embed-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; }
+  .seminar-embed-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; margin-top: 1.5rem; }
   .sem-poster-frame {
     background: #fff; padding: 0.6rem; box-shadow: 0 18px 40px rgba(26,26,22,0.15);
-    transform: rotate(1deg); max-width: 480px; width: 100%; margin: 0 auto;
+    transform: rotate(1deg); width: 100%; margin: 0 auto;
   }
   .sem-poster-frame img { display: block; width: 100%; height: auto; }
   .region-route {
@@ -312,6 +312,7 @@
   /* SCHEDULE */
   .schedule { padding: 8rem 5rem; background: var(--white); border-top: 1px solid var(--gray-mid); }
   .schedule-note { font-size: var(--fs-note); line-height: 1.8; color: var(--ink-light); font-weight: 400; margin-bottom: 1.75rem; }
+  .seminar-embed .schedule-note { margin-bottom: 3rem; }
   .schedule-grid { margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; }
   .schedule-status { font-size: var(--fs-note); color: var(--ink-light); padding: 2rem 0; }
   .schedule-card {
