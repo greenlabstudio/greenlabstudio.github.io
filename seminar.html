@@ -53,6 +53,11 @@
   .nav-links a { font-size: var(--fs-label); font-weight: 500; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; letter-spacing: 0.01em; }
   .nav-links a:hover { color: var(--green-logo); }
   .nav-links a.current { color: var(--green-logo); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 101; }
+  .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; transition: transform 0.2s, opacity 0.2s; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .section-eyebrow {
     font-family: var(--mono); font-size: var(--fs-micro); letter-spacing: 0.28em;
@@ -119,8 +124,8 @@
   .schedule-date { font-family: var(--mono); font-size: var(--fs-label); color: var(--green-logo); min-width: 90px; letter-spacing: 0.02em; }
   .schedule-region-tag {
     font-family: var(--sans); font-weight: 500; font-size: var(--fs-label);
-    color: var(--green-logo); background: var(--green-bg); padding: 0.3rem 0.8rem;
-    white-space: nowrap;
+    color: var(--green-logo); background: var(--green-bg); padding: 0.3rem 0.5rem;
+    white-space: nowrap; width: 98px; flex-shrink: 0; text-align: center;
   }
   .schedule-body { flex: 1; min-width: 180px; }
   .schedule-title { font-family: var(--sans); font-size: var(--fs-md); font-weight: 600; color: var(--green); margin-bottom: 0.35rem; }
@@ -142,9 +147,18 @@
   .footer-back:hover { color: #fff; }
 
   @media (max-width: 768px) {
-    nav { padding: 0.9rem 1.5rem; justify-content: center; }
+    nav { padding: 0.9rem 1.5rem; justify-content: space-between; }
     .nav-logo-img { height: 28px; margin-bottom: 0; }
-    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links {
+      display: flex; flex-direction: column; gap: 0; list-style: none;
+      position: fixed; top: 56px; left: 0; right: 0; background: var(--gray);
+      max-height: 0; overflow: hidden; transition: max-height 0.25s ease;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .nav-links.open { max-height: 320px; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 1rem 0; }
     .sem-hero { padding: 7rem 1.5rem 3rem; }
     .sem-hero-inner { max-width: min(380px, 88vw); }
     .sem-poster-frame { transform: none; }
@@ -164,13 +178,16 @@
   <a href="index.html" class="nav-logo">
     <img src="images/Logo.png" alt="녹색병원 그린랩" class="nav-logo-img">
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html#about">소개</a></li>
     <li><a href="index.html#programs">감염관리교육</a></li>
     <li><a href="seminar.html" class="current">문신사법 세미나</a></li>
     <li><a href="index.html#schedule">교육 일정</a></li>
     <li><a href="index.html#contact">오시는 길</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -311,6 +328,19 @@ async function loadSchedule() {
   }
 }
 loadSchedule();
+
+const navToggle = document.getElementById('nav-toggle');
+const navLinksEl = document.getElementById('nav-links');
+if (navToggle && navLinksEl) {
+  navToggle.addEventListener('click', () => {
+    const open = navLinksEl.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinksEl.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
 </script>
 </body>
 </html>
