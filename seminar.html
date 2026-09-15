@@ -81,7 +81,6 @@
   .sem-hero-inner { max-width: 460px; margin: 0 auto; }
   .sem-poster-frame {
     background: #fff; padding: 0.6rem; box-shadow: 0 18px 40px rgba(26,26,22,0.18);
-    transform: rotate(1.2deg);
   }
   .sem-poster-frame img { display: block; width: 100%; height: auto; }
 
@@ -306,8 +305,9 @@ async function loadSchedule() {
       const time = (r['시간'] || '').trim();
       const note = (r['비고'] || '').trim();
       const meta = [place, time].filter(Boolean).join(' · ');
-      const applyLink = (r['신청링크'] || '').trim()
-        ? `<a class="schedule-apply" href="${r['신청링크']}" target="_blank" rel="noopener">신청하기 →</a>`
+      const applyUrl = Object.keys(r).filter(k => k.indexOf('신청링크') === 0).map(k => (r[k] || '').trim()).find(v => v) || '';
+      const applyLink = applyUrl
+        ? `<a class="schedule-apply" href="${applyUrl}" target="_blank" rel="noopener">신청하기 →</a>`
         : '';
       return `
         <div class="schedule-card">

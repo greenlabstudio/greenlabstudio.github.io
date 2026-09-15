@@ -278,7 +278,7 @@
   .seminar-embed-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; margin-top: 1.5rem; }
   .sem-poster-frame {
     background: #fff; padding: 0.6rem; box-shadow: 0 18px 40px rgba(26,26,22,0.15);
-    transform: rotate(1deg); max-width: 700px; width: 100%; margin: 0 auto;
+    max-width: 700px; width: 100%; margin: 2.5rem auto 0;
   }
   .sem-poster-frame img { display: block; width: 100%; height: auto; }
   .region-route {
@@ -836,8 +836,9 @@ async function loadSchedule() {
       const instructor = (r['강사'] || '').trim();
       const time = (r['시간'] || '').trim();
       const meta = [instructor ? `강사 ${instructor}` : '', time].filter(Boolean).join(' · ');
-      const applyLink = (r['신청링크'] || '').trim()
-        ? `<a class="schedule-apply" href="${r['신청링크']}" target="_blank" rel="noopener">신청하기 →</a>`
+      const applyUrl = Object.keys(r).filter(k => k.indexOf('신청링크') === 0).map(k => (r[k] || '').trim()).find(v => v) || '';
+      const applyLink = applyUrl
+        ? `<a class="schedule-apply" href="${applyUrl}" target="_blank" rel="noopener">신청하기 →</a>`
         : '';
       return `
         <div class="schedule-card">
@@ -927,8 +928,9 @@ async function loadTourSchedule() {
       const time = (r['시간'] || '').trim();
       const note = (r['비고'] || '').trim();
       const meta = [place, time].filter(Boolean).join(' · ');
-      const applyLink = (r['신청링크'] || '').trim()
-        ? `<a class="schedule-apply" href="${r['신청링크']}" target="_blank" rel="noopener">신청하기 →</a>`
+      const applyUrl = Object.keys(r).filter(k => k.indexOf('신청링크') === 0).map(k => (r[k] || '').trim()).find(v => v) || '';
+      const applyLink = applyUrl
+        ? `<a class="schedule-apply" href="${applyUrl}" target="_blank" rel="noopener">신청하기 →</a>`
         : '';
       return `
         <div class="schedule-card">
