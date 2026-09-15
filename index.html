@@ -307,9 +307,6 @@
     white-space: nowrap; width: 98px; flex-shrink: 0; text-align: center;
   }
   .schedule-note-inline { font-size: var(--fs-micro); color: var(--ink-light); margin-top: 0.35rem; font-style: italic; }
-  /* 임베드 컬럼이 좁아서 가로 배치면 제목이 어색하게 줄바꿈됨 — 항상 세로로 쌓기 */
-  .seminar-embed .schedule-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 1.5rem 1.75rem; }
-  .seminar-embed .schedule-card > .schedule-badge, .seminar-embed .schedule-card > .schedule-apply { margin-left: 0; }
   .seminar-embed-cta { margin-top: 2rem; font-size: var(--fs-note); color: var(--ink-light); }
   .seminar-embed-cta a { color: var(--green-logo); text-decoration: none; border-bottom: 1px solid var(--green-logo); }
 
@@ -329,7 +326,7 @@
     min-width: 130px; letter-spacing: 0.02em;
   }
   .schedule-body { flex: 1; }
-  .schedule-title { font-family: var(--sans); font-size: var(--fs-md); font-weight: 600; color: var(--green); margin-bottom: 0.35rem; }
+  .schedule-title { font-family: var(--sans); font-size: var(--fs-md); font-weight: 600; color: var(--green); margin-bottom: 0.35rem; word-break: keep-all; }
   .schedule-meta { font-size: var(--fs-label); color: var(--ink-light); }
   .schedule-badge {
     font-family: var(--sans); font-weight: 600; font-size: var(--fs-label); letter-spacing: 0.02em;
@@ -421,6 +418,7 @@
 
     .schedule-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
     .schedule-date { min-width: auto; }
+    .seminar-embed .schedule-title { font-size: 1rem; }
 
     footer { justify-content: center; padding: 0.9rem 1.5rem; }
     .footer-logo-img { height: 28px; }
@@ -883,7 +881,7 @@ function renderTourRegionRoute(rows) {
   routeEl.innerHTML = TOUR_REGION_ORDER.map(region => {
     const data = byRegion[region];
     const dotClass = data.hasOpen ? 'open' : 'upcoming';
-    const countLabel = data.count ? `${data.count}회차` : '';
+    const countLabel = data.count ? `${data.count}회` : '';
     return `
       <div class="region-node">
         <span class="region-dot ${dotClass}"></span>
